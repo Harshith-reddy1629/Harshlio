@@ -6,10 +6,16 @@
   --background: #081b29;
   --foreground: #ddb929;
   --text: #f1c40f;
+  --maintheme: #a2a89a;
+  --secondary: #d2d5cd;
 }
 
 body {
   /* color: var(--foreground); */
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+*{
+  scrollbar-width: none;
 }
