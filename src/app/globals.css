@@ -1,13 +1,65 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--text);
+  --color-secondary: var(--secondary);
+  --color-maintheme: var(--maintheme);
+  --color-custom-grey: var(--custom-grey);
+  --color-custom-grey-100: var(--custom-grey-100);
+
+  --animate-bounce-text: bounceText 1s infinite;
+  --animate-slider: slider 4s infinite alternate linear;
+
+  @keyframes bounceText {
+    0%,
+    100% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateY(-10px);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+
+  @keyframes slider {
+    0% {
+      --y: 0%;
+    }
+    100% {
+      --y: 100%;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 :root {
-  --background: #081b29;
+  /* --background: #081b29; */
+  --background: #000;
   --foreground: #ddb929;
   --text: #f1c40f;
-  --maintheme: #a2a89a;
-  --secondary: #d2d5cd;
+  --custom-grey: #a2a89a;
+  --custom-grey-100: #d2d5cd;
+  --bluish: #081b29;
 }
 
 body {
@@ -16,6 +68,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-*{
+* {
   scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+@property --y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
 }
