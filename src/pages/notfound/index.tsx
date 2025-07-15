@@ -1,4 +1,4 @@
-import ShinyBorder from "@/components/common/header/custom/ShinyBorder";
+import ShinyBorder from "@/components/custom/ShinyBorder";
 import Back from "@/icons/Arrows/Back";
 import Link from "next/link";
 import React from "react";
@@ -14,7 +14,7 @@ export default function NotFound() {
         This <span className="text-white uppercase">page</span> does not exist
       </h2>
       <Link href="/">
-        <ShinyBorder className="group transform-all flex cursor-pointer items-center justify-center gap-3 bg-[#252525]/30 tracking-widest duration-300 hover:bg-[#252525]/50">
+        <ShinyBorder className="group transform-all flex cursor-pointer items-center justify-center gap-3 bg-[#252525]/30 px-5 py-1 tracking-widest duration-300 hover:bg-[#252525]/50">
           <Back
             size="14"
             className="transform-all duration-300 group-hover:-translate-x-1"
