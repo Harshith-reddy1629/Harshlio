@@ -10,7 +10,7 @@
   --color-custom-grey-100: var(--custom-grey-100);
 
   --animate-bounce-text: bounceText 1s infinite;
-  --animate-slider: slider 4s infinite alternate linear;
+  --animate-slider: slider 8s infinite alternate linear;
 
   @keyframes bounceText {
     0%,
@@ -77,4 +77,14 @@ body {
   syntax: "<percentage>";
   inherits: false;
   initial-value: 0%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  cursor: default;
 }
