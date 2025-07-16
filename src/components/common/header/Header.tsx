@@ -49,7 +49,7 @@ export default function Header() {
       }
       <ul
         data-scrolled={isScrolled}
-        className={`group flex w-1/2 justify-between gap-2 text-lg transition-all duration-500 *:cursor-pointer *:text-center before:absolute before:bottom-[-1px] before:left-3 before:transition-all before:duration-1000 before:content-[''] after:absolute after:top-[-1px] after:right-3 after:h-[1px] after:w-0 after:transition-all after:duration-1000 after:content-[''] max-lg:grow md:*:flex-[_1_1_25%_] ${
+        className={`group flex w-1/2 justify-between gap-2 text-lg transition-all duration-500 *:cursor-pointer *:text-center before:absolute before:bottom-[-1px] before:left-3 before:transition-all before:duration-1000 before:content-[''] after:absolute after:top-[-1px] after:right-3 after:h-[1px] after:w-0 after:transition-all after:duration-1000 after:content-[''] max-lg:grow max-md:text-sm md:*:flex-[_1_1_25%_] ${
           isScrolled
             ? "grow text-sm *:rounded-3xl before:h-[1px] before:w-1/2 before:bg-[radial-gradient(circle,_#ffffff,_transparent)] before:blur-[0px] after:w-1/2 after:bg-[radial-gradient(circle,_#ffffff,_transparent)] after:blur-[0px]"
             : ""

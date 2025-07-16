@@ -1,4 +1,3 @@
-"use client";
 import CopyRight from "@/icons/Social/CopyRight";
 // import SocialMedia from "@/pages/homepage/mainsection/SocialMedia";
 import { Geist, Geist_Mono } from "next/font/google";

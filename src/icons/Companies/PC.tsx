@@ -1,6 +1,6 @@
 import React from "react";
 
-export function PC({
+export default function PC({
   height = "60",
   width = "76",
   className = "",
@@ -39,8 +39,8 @@ export function PC({
           y2="-9.50686"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.075" stop-color="#F5F5F5" />
-          <stop offset="0.91" stop-color="#3485FD" />
+          <stop offset="0.075" stopColor="#F5F5F5" />
+          <stop offset="0.91" stopColor="#3485FD" />
         </linearGradient>
       </defs>
     </svg>
