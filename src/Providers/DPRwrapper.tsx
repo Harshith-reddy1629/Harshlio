@@ -5,7 +5,13 @@ export default function DPRwrapper() {
   useEffect(() => {
     const f = () => {
       const dpr = window.devicePixelRatio;
-      document.body.style.zoom = `${1.25 / dpr}`;
+      if (
+        /**window?.devicePixelRatio * innerWidth >= 768 &&*/
+        innerWidth >= 768 &&
+        dpr < 1.25
+      ) {
+        document.body.style.zoom = `${1.25 / dpr}`;
+      }
     };
     f();
     window.addEventListener("resize", f);

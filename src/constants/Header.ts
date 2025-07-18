@@ -4,8 +4,8 @@ export const HeaderRoutes = [
     href: "/",
   },
   {
-    name: "About",
-    href: "/about",
+    name: "Work",
+    href: "/work",
   },
   {
     name: "Projects",

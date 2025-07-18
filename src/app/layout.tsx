@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/common/header/Header";
 import "./globals.css";
 import Footer from "@/components/common/footer/Footer";
-// import DPRwrapper from "@/Providers/DPRwrapper";
+import DPRwrapper from "@/Providers/DPRwrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +37,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${geistMono.className} ${geistSans.className} text-white antialiased`}
       >
-        {/* <DPRwrapper /> */}
+        <DPRwrapper />
         <Header />
         {children}
         <Footer />
