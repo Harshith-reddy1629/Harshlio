@@ -1,5 +1,5 @@
 import Image from "next/image";
-import I from "../../../public/img2.png";
+import I from "../../../public/im2.png";
 
 export default function HomeV1() {
   return (
