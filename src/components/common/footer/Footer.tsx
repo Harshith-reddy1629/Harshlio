@@ -19,7 +19,7 @@ export default function Footer() {
         <p className="mb-2">Get in touch</p>
         <SocialMedia className="!size-8" />
       </div> */}
-      <div className="relative flex items-center justify-end gap-1 overflow-hidden border-t border-white/10 p-5 px-18 text-xs text-white/70">
+      <div className="relative flex items-center max-md:justify-center justify-end gap-1 overflow-hidden border-t border-white/10 p-5 px-18 max-md:px-5 text-xs text-white/70">
         {" "}
         All Rights <CopyRight /> Harshith Reddy 2025
       </div>

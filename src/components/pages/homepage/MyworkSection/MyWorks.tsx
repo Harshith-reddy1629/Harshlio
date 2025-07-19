@@ -9,18 +9,13 @@ export default function MyWorks() {
       (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-y-0");
-            entry.target.classList.remove(
-              "opacity-0",
-              "translate-y-[60px]",
-              // "scale-50",
-            );
+            entry.target.classList.add("translate-y-0");
+            entry.target.classList.remove("opacity-0", "translate-y-[60px]");
             observer.unobserve(entry.target);
           } else {
             entry.target.classList.add(
               "opacity-0",
               "translate-y-[60px]",
-              // "scale-50",
               "transition-all",
               "duration-500",
             );
@@ -28,8 +23,9 @@ export default function MyWorks() {
         });
       },
       {
-        threshold: Array.from({ length: 101 }, (_, i) => i / 100),
-        rootMargin: "0px 0px -100px 0px",
+        threshold: 0.15,
+        //   threshold: Array.from({ length: 101 }, (_, i) => i / 100),
+        //   rootMargin: "0px 0px -100px 0px",
       },
     );
 
@@ -62,20 +58,20 @@ export default function MyWorks() {
             key={each.name}
             className="mb-6 rounded-xl border border-white/10 bg-[#ffffff08] p-6 transition-all duration-500 ease-in-out before:opacity-40 after:opacity-40"
           >
-            <div className="flex items-center gap-1 flex-wrap">
-              <each.icon className="size-13 shrink-0 mr-3 rounded-lg border border-white/10 bg-white/5 p-1.5" />
+            <div className="flex flex-wrap items-center gap-1">
+              <each.icon className="mr-3 size-13 shrink-0 rounded-lg border border-white/10 bg-white/5 p-1.5" />
               <div>
                 <h3 className="text-2xl">{each.name}</h3>
                 <p className="text-sm text-white/50">{each.role}</p>
               </div>
               {each.date && (
-                <span className=" ml-auto rounded-full bg-white/5 px-4 py-1 max-sm:text-[10px] text-xs md:text-sm">
+                <span className="ml-auto rounded-full bg-white/5 px-4 py-1 text-xs max-sm:text-[10px] md:text-sm">
                   {each.date}
                 </span>
               )}
             </div>
             <div>
-              <p className="mt-3 text-xs flex flex-wrap text-white/50 *:rounded-md *:bg-white/5 *:px-3 *:py-1">
+              <p className="mt-3 flex flex-wrap text-xs text-white/50 *:rounded-md *:bg-white/5 *:px-3 *:py-1">
                 {each.skillsOverview.map((skill) => (
                   <span
                     key={`${skill}-${each.name}`}

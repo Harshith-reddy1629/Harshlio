@@ -8,7 +8,7 @@ export default function DPRwrapper() {
       if (
         /**window?.devicePixelRatio * innerWidth >= 768 &&*/
         innerWidth >= 768 &&
-        dpr < 1.25
+        dpr <= 1.25
       ) {
         document.body.style.zoom = `${1.25 / dpr}`;
       }
