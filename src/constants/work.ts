@@ -21,7 +21,7 @@ export const work = [
       "Zustand",
     ],
     description:
-      "At PureCode, I spearheaded the integration of Stripe for seamless, secure payment processing and MailerLite for dynamic email automation, driving higher user engagement. Optimized the platform’s UI/UX, ensuring responsiveness and performance across all devices. Successfully resolved over 100 bugs, significantly improving application stability and overall user experience.",
+      "At PureCode, I spearheaded the integration of Stripe for seamless, secure payment processing and MailerLite for dynamic email automation, driving higher user engagement. Optimized the platform’s UI/UX, ensuring responsiveness and performance across all devices. Successfully resolved over 200 bugs, significantly improving application stability and overall user experience.",
   },
   {
     name: "Kyno Health",

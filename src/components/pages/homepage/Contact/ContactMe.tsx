@@ -1,7 +1,7 @@
 import Circular from "@/icons/Circular";
 import ClickPointer from "@/icons/Cursor/ClickPointer";
 import React from "react";
-import ContactDialog from "../mainsection/Dialo";
+import ContactDialog from "../mainsection/ContactDialog";
 
 export default function ContactMe() {
   return (

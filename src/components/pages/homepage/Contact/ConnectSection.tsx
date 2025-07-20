@@ -20,7 +20,7 @@ export default function ConnectSection() {
       <div className="grid grid-cols-[repeat(auto-fill,_minmax(260px,_1fr))] gap-4 *:flex-[1_1_33%] *:cursor-pointer">
         <div
           data-scroll-effect
-          className="flex flex-col gap-1 rounded-xl border border-white/10 bg-[#ffffff04] p-4 text-sm transition-all duration-300 hover:bg-[#ffffff08]"
+          className="flex flex-col gap-1 rounded-xl border border-white/10 bg-[#ffffff04] p-4 text-sm transition-all duration-300 hover:bg-[#ffffff10]"
         >
           <Call className="size-10 rounded-md border border-white/10 p-1" />
           <p className="mt-1">Call me</p>
@@ -29,7 +29,7 @@ export default function ConnectSection() {
         <a
           href="mailto:reddybharshith3@gmail.com"
           data-scroll-effect
-          className="flex flex-col gap-1 rounded-xl border border-white/10 bg-[#ffffff04] p-4 text-sm transition-all duration-300 hover:bg-[#ffffff08]"
+          className="flex flex-col gap-1 rounded-xl border border-white/10 bg-[#ffffff04] p-4 text-sm transition-all duration-300 hover:bg-[#ffffff10]"
         >
           <Mail className="size-10 rounded-md border border-white/10 p-1" />
           <p className="mt-1">Email me</p>
@@ -39,7 +39,7 @@ export default function ConnectSection() {
           href="https://www.linkedin.com/in/bandam-harshith-reddy/"
           target="_blank"
           data-scroll-effect
-          className="group flex flex-col gap-1 rounded-xl border border-white/10 bg-[#ffffff04] p-4 text-sm transition-all duration-300 hover:bg-[#ffffff08]"
+          className="group flex flex-col gap-1 rounded-xl border border-white/10 bg-[#ffffff04] p-4 text-sm transition-all duration-300 hover:bg-[#ffffff10]"
         >
           <Linkedin className="size-10 rounded-md border border-white/10 p-1" />
           <p className="mt-1">Linkedin</p>

@@ -1,45 +1,156 @@
+"use client";
 import { ArrowBigRightDash } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+import clsx from "clsx";
+
+type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+const INITIAL_FORM: FormData = {
+  name: "",
+  email: "",
+  message: "",
+};
 
 export default function ContactForm({
   className = "",
 }: {
   className?: string;
 }) {
+  const [form, setForm] = useState<FormData>(INITIAL_FORM);
+  const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+
+  const validate = () => {
+    const newErrors: Partial<FormData> = {};
+    if (!form.name.trim()) newErrors.name = "Required";
+    if (!form.email.trim()) newErrors.email = "Required";
+    if (!form.message.trim()) newErrors.message = "Required";
+    return newErrors;
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (status === "loading" || status === "success") return;
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setStatus("loading");
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_SERVICE_KEY ?? "",
+        process.env.NEXT_PUBLIC_TEMPLATE_KEY ?? "",
+        form,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY ?? "",
+      );
+
+      setStatus("success");
+      setTimeout(() => {
+        setStatus("idle");
+      }, 5000);
+      setForm(INITIAL_FORM);
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setStatus("error");
+    }
+  };
+
   return (
     <div className={className} data-scroll-effect>
-      <form action="" className="flex flex-col gap-3 text-sm">
-        <div className="flex flex-wrap *:flex-[1_1_45%] gap-3 ">
-        <div className="flex flex-col gap-1">
-          <label htmlFor="">Name</label>
-          <input
-            className="rounded-md bg-[#191919] p-3 outline-0"
-            type="text"
-            placeholder="Name"
-          />
+      <form
+        onSubmit={handleSubmit}
+        action=""
+        className="flex flex-col gap-3 text-sm"
+      >
+        <div className="flex flex-wrap gap-3 *:flex-[1_1_45%]">
+          <div className="flex flex-col gap-1">
+            <label htmlFor="">Name</label>
+            <input
+              className="rounded-md bg-[#191919] p-3 outline-0"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              value={form.name}
+              onChange={handleChange}
+            />
+            {errors?.name && (
+              <span className="text-xs text-red-700">Required</span>
+            )}
+          </div>
+          <div className="flex flex-col gap-1">
+            <label htmlFor="">Email</label>
+            <input
+              onChange={handleChange}
+              className="rounded-md bg-[#191919] p-3 outline-0"
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={form.email}
+              id="email"
+            />{" "}
+            {errors?.email && (
+              <span className="text-xs text-red-700">Required</span>
+            )}
+          </div>
         </div>
-        <div className="flex flex-col gap-1">
-          <label htmlFor="">Email</label>
-          <input
-            className="rounded-md bg-[#191919] p-3 outline-0"
-            type="email"
-            placeholder="Email"
-          />{" "}
-        </div></div>
         <div className="flex flex-col gap-1">
           <label htmlFor="">Message</label>
           <textarea
+            onChange={handleChange}
+            name="message"
+            value={form.message}
+            id="message"
             rows={4}
             placeholder="Message"
             className="resize-none rounded-md bg-[#191919] p-3 outline-0"
           ></textarea>{" "}
+          {errors?.message && (
+            <span className="text-xs text-red-700">Required</span>
+          )}
         </div>
         <button
-          className="px-8 flex items-center gap-1 group w-fit ml-auto cursor-pointer rounded-lg border border-white/10 p-3 transition-all duration-300 hover:bg-black/20"
+          className={clsx(
+            "group ml-auto flex w-fit cursor-pointer items-center gap-1 rounded-lg border border-white/10 p-3 px-8 transition-all duration-300 hover:bg-black/20 disabled:cursor-not-allowed disabled:opacity-50",
+
+            {
+              "bg-green-700/20 text-green-500": status === "success",
+              "bg-red-600/10 text-red-500": status === "error",
+            },
+          )}
+          disabled={status === "loading"}
           type="submit"
         >
-          Send Message <ArrowBigRightDash size={16} className="group-hover:translate-x-1 mt-0.5 duration-300 transition-all" />
+          {status === "loading"
+            ? "Sending..."
+            : status === "success"
+              ? "Sent"
+              : "Send Message"}
+          {status !== "loading" && status !== "success" && (
+            <ArrowBigRightDash
+              size={16}
+              className="mt-0.5 transition-all duration-300 group-hover:translate-x-1"
+            />
+          )}
         </button>
+        {status === "error" && <span className="text-xs text-red-700 text-center"> Something went wrong</span>}
       </form>
     </div>
   );
