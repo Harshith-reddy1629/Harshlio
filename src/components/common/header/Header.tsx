@@ -54,7 +54,7 @@ export default function Header() {
             </span>
           </div>
         }
-        <ul
+        <div
           data-scrolled={isScrolled}
           className={`group flex w-1/2 justify-between gap-2 text-lg transition-all duration-500 *:cursor-pointer *:text-center before:absolute before:bottom-[-1px] before:left-3 before:transition-all before:duration-1000 before:content-[''] after:absolute after:top-[-1px] after:right-3 after:h-[1px] after:w-0 after:transition-all after:duration-1000 after:content-[''] max-lg:grow max-md:text-sm md:*:flex-[_1_1_25%_] ${
             isScrolled
@@ -68,7 +68,7 @@ export default function Header() {
               {route.name.slice(1)}
             </LinkButton>
           ))}
-        </ul>
+        </div>
       </header>
       {pathname.startsWith("/resume") ? (
         <ShinyBorder className="!fixed !right-6 !bottom-4 z-60 flex cursor-pointer items-center gap-1 rounded-md bg-[#000] shadow-2xl shadow-white/10 transition-all duration-300 hover:bg-[#1118]">

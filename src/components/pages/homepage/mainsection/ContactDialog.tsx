@@ -18,7 +18,9 @@ export default function ContactDialog({
 }) {
   return (
     <Dialog>
-      <DialogTrigger className={className}>{children}</DialogTrigger>
+      <DialogTrigger aria-label="Contact Me" className={className}>
+        {children}
+      </DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="text-xl">Connect with Me</DialogTitle>
