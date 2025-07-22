@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
       ipInfo = in_memory_ips.get(ip_key) ?? "";
     } else {
       const ipRes = await fetch(
-        `https://ipinfo.io/${ip_key}?token=${process.env.IPINFO_TOKEN}`,
+        `https://ipinfo.io/${ip}?token=${process.env.IPINFO_TOKEN}`,
       );
 
       if (ipRes.ok) {
