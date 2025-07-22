@@ -4,7 +4,7 @@ import OpenWorkBadge from "@/components/custom/OpenWorkBadge";
 export default function NameHeader() {
   return (
     <h1 className="relative mx-auto mb-8 w-fit rounded border border-amber-50/20 bg-[radial-gradient(#fff,#fff4)] bg-clip-text p-2 px-8 text-[clamp(1.125rem,2.5vw,2rem)] text-transparent backdrop-blur-sm before:absolute before:bottom-0 before:left-3 before:h-[1px] before:w-1/2 before:translate-y-full before:bg-[radial-gradient(circle,_#ffffff,_transparent)] before:blur-[0px] before:content-[''] after:absolute after:top-0 after:right-3 after:h-[1px] after:w-1/2 after:-translate-y-full after:bg-[radial-gradient(circle,_#ffffff,_transparent)] after:blur-[0px] after:content-['']">
-      <OpenWorkBadge className="!-top-2 max-md:text-[9px] max-md:py-1 max-md:pl-2 -translate-y-full" />
+      <OpenWorkBadge className="!-top-2 -translate-y-full max-md:py-1 max-md:pl-2 max-md:text-[9px]" />
       <span className="block bg-[radial-gradient(circle_at_var(--y)_50%,_#fff4,#fff4)] bg-clip-text text-[clamp(1rem,2.2vw,1.25rem)] font-light text-transparent">
         Hey!, I&apos;m
       </span>

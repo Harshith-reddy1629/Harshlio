@@ -1,3 +1,4 @@
+"use client";
 import {
   Dialog,
   DialogContent,
@@ -8,6 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import React from "react";
 import ContactForm from "../Contact/ContactForm";
+import useTriggerAction from "triggerAction";
 
 export default function ContactDialog({
   children,
@@ -16,9 +18,15 @@ export default function ContactDialog({
   children: React.ReactNode;
   className?: string;
 }) {
+  const { handleClickAction: handleClick } = useTriggerAction();
+
   return (
     <Dialog>
-      <DialogTrigger aria-label="Contact Me" className={className}>
+      <DialogTrigger
+        onClick={() => handleClick("CONTACT DIALOG")}
+        aria-label="Contact Me"
+        className={className}
+      >
         {children}
       </DialogTrigger>
       <DialogContent>

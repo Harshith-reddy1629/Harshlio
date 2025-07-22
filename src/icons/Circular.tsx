@@ -6,7 +6,7 @@ export default function Circular({
   color = "#ffffffc0",
   className = "",
   textClass = "",
-  speed = "12s",
+  speed = "15s",
 }: {
   text?: string;
   size?: string | number;

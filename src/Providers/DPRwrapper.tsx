@@ -1,10 +1,19 @@
 "use client";
-import React, { useEffect } from "react";
+import useTriggerAction from "triggerAction";
+import { useEffect } from "react";
+
+declare global {
+  interface Navigator {
+    userAgentData: string;
+  }
+}
 
 export default function DPRwrapper() {
+  const { triggerAction } = useTriggerAction();
+
   useEffect(() => {
     const f = () => {
-      const dpr = window.devicePixelRatio;
+      const dpr = window.devicePixelRatio || 1;
       if (
         /**window?.devicePixelRatio * innerWidth >= 768 &&*/
         innerWidth >= 768 &&
@@ -19,5 +28,10 @@ export default function DPRwrapper() {
       window.removeEventListener("resize", f);
     };
   }, []);
-  return <></>;
+
+  useEffect(() => {
+    triggerAction?.();
+  }, [triggerAction]);
+
+  return null;
 }

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import ShinyBorder from "@/components/custom/ShinyBorder";
-import { work } from "@/constants/work";
+import { WORK_EXPERIENCE } from "@/constants/work";
 
 export default function MyWorks() {
   useEffect(() => {
@@ -23,9 +23,7 @@ export default function MyWorks() {
         });
       },
       {
-        threshold: 0.15,
-        //   threshold: Array.from({ length: 101 }, (_, i) => i / 100),
-        //   rootMargin: "0px 0px -100px 0px",
+        threshold: 0.25,
       },
     );
 
@@ -33,18 +31,28 @@ export default function MyWorks() {
     elements.forEach((element) => {
       intersector.observe(element);
     });
+
+    return () => {
+      intersector.disconnect();
+    };
   }, []);
 
   return (
     <div className="mx-auto w-full px-4 py-12 md:max-w-2/3 md:px-8">
       <div className="mb-12">
-        <h2 className="text-5xl">
+        <h2 data-scroll-effect className="text-5xl">
           {" "}
-          <span className="bg-[radial-gradient(#fff9,#fff6)] bg-clip-text text-transparent">
+          <span
+            data-scroll-effect
+            className="bg-[radial-gradient(#fff9,#fff6)] bg-clip-text text-transparent"
+          >
             Work
           </span>{" "}
           <br />{" "}
-          <span className="bg-[radial-gradient(#fff9,#fff9)] bg-clip-text text-transparent">
+          <span
+            data-scroll-effect
+            className="bg-[radial-gradient(#fff9,#fff9)] bg-clip-text text-transparent"
+          >
             {" "}
             Experience
           </span>
@@ -52,7 +60,7 @@ export default function MyWorks() {
         <p></p>
       </div>
       <div>
-        {work.map((each) => (
+        {WORK_EXPERIENCE.map((each) => (
           <ShinyBorder
             scrollEffect
             key={each.name}

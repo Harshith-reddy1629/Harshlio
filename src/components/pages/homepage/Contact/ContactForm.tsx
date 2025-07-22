@@ -3,6 +3,7 @@ import { ArrowBigRightDash } from "lucide-react";
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import clsx from "clsx";
+import useTriggerAction from "triggerAction";
 
 type FormData = {
   name: string;
@@ -26,6 +27,7 @@ export default function ContactForm({
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
+  const { handleClickAction: handleClick } = useTriggerAction();
 
   const validate = () => {
     const newErrors: Partial<FormData> = {};
@@ -44,6 +46,9 @@ export default function ContactForm({
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    handleClick(
+      `Submit ${form.name} ${form.email} ${form.message} {contact form} `,
+    );
     if (status === "loading" || status === "success") return;
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
@@ -62,6 +67,7 @@ export default function ContactForm({
       );
 
       setStatus("success");
+      handleClick(`Form Submitted ${form.name} ${form.email} {contact form}`);
       setTimeout(() => {
         setStatus("idle");
       }, 5000);
@@ -75,6 +81,9 @@ export default function ContactForm({
   return (
     <div className={className} data-scroll-effect>
       <form
+        onFocus={(e) => {
+          handleClick(`${e.target.name} focused ${e.isTrusted} {contact form}`);
+        }}
         onSubmit={handleSubmit}
         action=""
         className="flex flex-col gap-3 text-sm"
@@ -128,7 +137,7 @@ export default function ContactForm({
         </div>
         <button
           className={clsx(
-            "group ml-auto flex w-fit cursor-pointer items-center gap-1 rounded-lg border border-white/10 p-3 px-8 transition-all duration-300 hover:bg-black/20 disabled:cursor-not-allowed disabled:opacity-50",
+            "group relative ml-auto flex w-fit cursor-pointer items-center gap-1 rounded-lg border border-white/10 p-3 px-8 transition-all duration-300 hover:bg-black/20 disabled:cursor-not-allowed disabled:opacity-50",
 
             {
               "bg-green-700/20 text-green-500": status === "success",
@@ -150,7 +159,12 @@ export default function ContactForm({
             />
           )}
         </button>
-        {status === "error" && <span className="text-xs text-red-700 text-center"> Something went wrong</span>}
+        {status === "error" && (
+          <span className="text-center text-xs text-red-700">
+            {" "}
+            Something went wrong
+          </span>
+        )}
       </form>
     </div>
   );

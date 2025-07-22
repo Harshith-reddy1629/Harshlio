@@ -1,5 +1,5 @@
 import ShinyBorder from "@/components/custom/ShinyBorder";
-import { skillswithSvg } from "@/constants/skills";
+import { SKILLSET_WITH_SVG } from "@/constants/skills";
 
 import React from "react";
 
@@ -21,7 +21,7 @@ export default function Mystacks() {
         <p></p>
       </div>
       <div className="grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-4">
-        {skillswithSvg.map((i) => (
+        {SKILLSET_WITH_SVG.map((i) => (
           <ShinyBorder
             scrollEffect
             key={i.name}

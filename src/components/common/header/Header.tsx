@@ -8,11 +8,13 @@ import ShinyBorder from "@/components/custom/ShinyBorder";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Download } from "lucide-react";
+import useTriggerAction from "triggerAction";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const timeref = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
+  const { handleClickAction: handleClick } = useTriggerAction();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,12 +48,14 @@ export default function Header() {
             }`}
           >
             {" "}
-            <span className="rounded-lg bg-[linear-gradient(to_right,white,_var(--text))] bg-clip-text px-4 py-1 text-2xl font-semibold text-transparent max-md:px-1">
-              {"<"}H<span className="text-primary max-md:uppercase">a</span>
-              <span className="max-md:hidden">rshith</span>
-              <span className="text-primary">.</span>
-              {"/>"}
-            </span>
+            <Link onClick={() => handleClick("LOGO")} href={"/"}>
+              <span className="rounded-lg bg-[linear-gradient(to_right,white,_var(--text))] bg-clip-text px-4 py-1 text-2xl font-semibold text-transparent max-md:px-1">
+                {"<"}H<span className="text-primary max-md:uppercase">a</span>
+                <span className="max-md:hidden">rshith</span>
+                <span className="text-primary">.</span>
+                {"/>"}
+              </span>
+            </Link>
           </div>
         }
         <div
@@ -74,8 +78,10 @@ export default function Header() {
         <ShinyBorder className="!fixed !right-6 !bottom-4 z-60 flex cursor-pointer items-center gap-1 rounded-md bg-[#000] shadow-2xl shadow-white/10 transition-all duration-300 hover:bg-[#1118]">
           <a
             href="/harshith_reddy_06.pdf"
-            className="z-50 items-center gap-2 rounded-lg bg-[#000] p-3 px-5 text-xs shadow-xl transition-all duration-300 hover:bg-[#0f0f0f] flex"
+            className="z-50 flex items-center gap-2 rounded-lg bg-[#000] p-3 px-5 text-xs shadow-xl transition-all duration-300 hover:bg-[#0f0f0f]"
             download={"Harshith_Reddy"}
+            rel="noreferrer"
+            onClick={() => handleClick("View Full RESUME")}
             target="_blank"
           >
             {" "}
@@ -84,7 +90,7 @@ export default function Header() {
           </a>
         </ShinyBorder>
       ) : (
-        <Link href="/resume">
+        <Link onClick={() => handleClick("Resume")} href="/resume">
           <ShinyBorder className="!fixed !right-6 !bottom-4 z-60 flex cursor-pointer items-center gap-1 rounded-md bg-[#000] p-2 px-6 shadow-2xl shadow-white/10 transition-all duration-300 hover:bg-[#1118]">
             <>
               <Document

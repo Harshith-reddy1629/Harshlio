@@ -13,7 +13,7 @@ import Redux from "@/icons/Skills/Redux";
 import Tailwind from "@/icons/Skills/Tailwind";
 import Typescript from "@/icons/Skills/Typescript";
 
-export const skillswithSvg = [
+export const SKILLSET_WITH_SVG = [
   {
     name: "React",
     icon: ReactIcon,

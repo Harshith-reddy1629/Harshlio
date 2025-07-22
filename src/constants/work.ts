@@ -1,7 +1,7 @@
 import Kyno from "@/icons/Companies/Kyno";
 import PC from "@/icons/Companies/PC";
 
-export const work = [
+export const WORK_EXPERIENCE = [
   {
     name: "PureCode.ai",
     role: "Software Engineer",
@@ -34,7 +34,7 @@ export const work = [
   },
 ];
 
-export const projects = [
+export const PROJECTS_OVERVIEW = [
   {
     name: "PureCode.ai",
     link: "https://purecode.ai",
