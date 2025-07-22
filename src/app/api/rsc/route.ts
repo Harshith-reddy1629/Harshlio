@@ -47,7 +47,12 @@ export async function POST(request: NextRequest) {
 
         in_memory_ips.set(ip_key, ipInfo);
       } else {
-        console.error("Failed to fetch IP info:", await ipRes.text());
+        console.error(
+          "Failed to fetch IP info:",
+          ip,
+          ip_key,
+          await ipRes.text(),
+        );
       }
     }
   } catch (error) {
