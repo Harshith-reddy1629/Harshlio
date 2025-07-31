@@ -11,7 +11,7 @@ export default function ConnectSection() {
   const { handleClickAction: handleClick } = useTriggerAction();
 
   return (
-    <div className="mx-auto w-full px-4 py-12 md:max-w-2/3 md:px-8">
+    <div className="mx-auto w-full px-4 py-12 md:max-w-[1200px] md:px-8">
       <div className="mb-12">
         <h2 className="text-5xl">
           {" "}
@@ -43,7 +43,6 @@ export default function ConnectSection() {
         </a>{" "}
         <a
           href="https://www.linkedin.com/in/bandam-harshith-reddy/"
-
           target="_blank"
           data-scroll-effect
           rel="noreferrer"

@@ -38,7 +38,7 @@ export default function MyWorks() {
   }, []);
 
   return (
-    <div className="mx-auto w-full px-4 py-12 md:max-w-2/3 md:px-8">
+    <div className="mx-auto w-full px-4 py-12 md:max-w-[1200px] md:px-8">
       <div className="mb-12">
         <h2 data-scroll-effect className="text-5xl">
           {" "}
@@ -94,8 +94,8 @@ export default function MyWorks() {
               </p>
             </div>
             {each?.description && (
-              <div className="mt-6 rounded-xl bg-black p-3 px-4">
-                <p className="text-xs">{each.description}</p>
+              <div className="mt-6 rounded-xl bg-black py-5 px-4">
+                <p className="text-[clamp(12px,1.5vw,14px)]">{each.description}</p>
               </div>
             )}
           </ShinyBorder>

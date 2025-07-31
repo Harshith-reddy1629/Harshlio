@@ -5,7 +5,7 @@ import LinkIcon from "@/icons/LinkIcon";
 
 export default function Projects() {
   return (
-    <div className="mx-auto w-full px-4 py-12 md:max-w-2/3 md:px-8">
+    <div className="mx-auto w-full px-4 py-12 md:max-w-[1200px] md:px-8">
       <div className="mb-12">
         <h2 className="text-5xl">
           <span className="bg-[radial-gradient(#fff9,#fff9)] bg-clip-text text-transparent">
@@ -26,9 +26,12 @@ export default function Projects() {
               <div className="">
                 <div className="flex items-center gap-1.5">
                   <h3 className="inline text-2xl">{each.name}</h3>
-                  <p className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2 py-0.5 pr-3 text-[10px] text-white/50">
+                  <a
+                    href={each.link}
+                    className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2 py-0.5 pr-3 text-[10px] text-white/50 transition-all duration-300 hover:text-white/70"
+                  >
                     <LinkIcon /> LINK
-                  </p>
+                  </a>
                 </div>
                 <div>
                   <p className="mt-2 text-sm text-white/65">Technologies:</p>
@@ -50,7 +53,7 @@ export default function Projects() {
             </div>
             <div className="min-w-[300px] flex-[1_1_60%] px-3">
               <p>Responsibilities</p>
-              <ul className="mt-2 list-inside list-disc text-xs text-white/70 *:mb-1">
+              <ul className="mt-2 list-inside list-disc text-sm text-white/80 *:mb-1">
                 {each.points.map((i, ind) => (
                   <li key={`keys-${ind}`}>{i}</li>
                 ))}

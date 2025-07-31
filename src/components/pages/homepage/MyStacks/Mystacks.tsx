@@ -5,7 +5,7 @@ import React from "react";
 
 export default function Mystacks() {
   return (
-    <div className="mx-auto w-full px-4 py-12 md:max-w-2/3 md:px-8">
+    <div className="mx-auto w-full px-4 py-12 md:max-w-[1200px] md:px-8">
       <div className="mb-12">
         <h2 className="text-5xl">
           {" "}
@@ -33,7 +33,7 @@ export default function Mystacks() {
                 <h3 className="text-xl">{i.name}</h3>
               </div>
             </div>
-            <p className="mt-3 rounded-lg bg-black p-1.5 px-3 text-[10px] text-white/80">
+            <p className="mt-3 rounded-lg bg-black p-1.5 px-3 text-[clamp(10px,1.2vw,11px)] text-white/80">
               {i.description}
             </p>
           </ShinyBorder>
