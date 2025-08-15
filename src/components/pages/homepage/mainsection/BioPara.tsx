@@ -2,7 +2,7 @@ import React from "react";
 
 export default function BioPara() {
   return (
-    <p className="relative mb-8 w-full mr-2 md:max-w-[610px] max-md:py-3 p-5 px-8 text-[clamp(0.85rem,1.5vw,1rem)] text-white/50 before:absolute before:bottom-[-3px] before:left-1/2 before:h-[1px] before:w-4/3 before:-translate-1/2 before:bg-[radial-gradient(circle,_#ffffff,_transparent)] before:blur-[0px] before:content-[''] after:absolute after:top-[-2px] after:left-1/2 after:h-[1px] after:w-4/3 after:-translate-1/2 after:bg-[radial-gradient(circle,_#ffffff,_transparent)] after:blur-[0px] after:content-['']">
+    <p className="relative mr-2 mb-8 w-full p-5 px-8 text-[clamp(0.85rem,1.5vw,1.125rem)] leading-[150%] text-white/50 before:absolute before:bottom-[-3px] before:left-1/2 before:h-[1px] before:w-4/3 before:-translate-1/2 before:bg-[radial-gradient(circle,_#ffffff,_transparent)] before:blur-[0px] before:content-[''] after:absolute after:top-[-2px] after:left-1/2 after:h-[1px] after:w-4/3 after:-translate-1/2 after:bg-[radial-gradient(circle,_#ffffff,_transparent)] after:blur-[0px] after:content-[''] max-md:py-3 md:max-w-[650px]">
       <span className="before:absolute before:top-1/2 before:right-3 before:h-8/3 before:w-[0.8px] before:-translate-1/2 before:bg-[radial-gradient(circle,_#ffffff,_transparent)] before:blur-[0px] before:content-[''] after:absolute after:top-1/2 after:left-3 after:h-8/3 after:w-[1px] after:-translate-1/2 after:bg-[radial-gradient(circle,_#ffffff,_transparent)] after:blur-[0px] after:content-['']"></span>
       I&apos;m a <span className="text-white">Full-stack Developer</span> based
       in Hyderabad, India. I specialize in building scalable, reliable, and

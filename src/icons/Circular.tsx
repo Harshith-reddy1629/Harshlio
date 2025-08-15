@@ -36,10 +36,10 @@ export default function Circular({
       <text
         id="text"
         fontFamily="monospace"
-        fontSize="12"
+        fontSize="14"
         fontWeight="bold"
         fill={color}
-        className={`tracking-[0.12em] uppercase ${textClass}`}
+        className={`tracking-[0.016em] uppercase ${textClass}`}
       >
         <textPath className="" id="textPath" href="#circlePath">
           {text}
