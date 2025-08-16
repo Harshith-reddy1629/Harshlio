@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import React from "react";
-import ContactForm from "../Contact/ContactForm";
+import ContactForm from "../../Contact/ContactForm";
 import useTriggerAction from "triggerAction";
 
 export default function ContactDialog({

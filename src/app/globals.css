@@ -213,6 +213,6 @@ p {
   }
 }
 
-/* [data-scroll-effect="true"] {
+[data-scroll-effect="true"] {
   @apply translate-y-[60px] opacity-0 transition-all duration-500;
-} */
+}

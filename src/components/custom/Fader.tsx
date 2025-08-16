@@ -6,20 +6,25 @@ export default function Fader() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const targetElement = entry.target as HTMLElement;
-          targetElement.style.transition = "all 0.9s";
-          targetElement.removeAttribute("data-fader");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const targetElement = entry.target as HTMLElement;
+            targetElement.style.transition = "all 0.6s";
+            targetElement.removeAttribute("data-scroll-effect");
 
-          setTimeout(() => {
-            targetElement.style.removeProperty("transition");
-          }, 1000);
-        }
-      });
-    });
-    const elements = document.querySelectorAll("[data-fader=true]");
+            setTimeout(() => {
+              targetElement.style.removeProperty("transition");
+            }, 1000);
+          }
+        });
+      },
+      {
+        threshold: 0.25,
+      },
+    );
+    const elements = document.querySelectorAll("[data-scroll-effect=true]");
 
     elements.forEach((element) => {
       observer.observe(element);

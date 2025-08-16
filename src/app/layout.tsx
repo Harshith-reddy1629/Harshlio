@@ -6,6 +6,7 @@ import Footer from "@/components/common/footer/Footer";
 import DPRwrapper from "@/Providers/DPRwrapper";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Fader from "@/components/custom/Fader";
 
 // const baseurl = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000";
 
@@ -20,14 +21,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Harshith Reddy",
+  title: "Bandam Harshith Reddy",
   description:
-    "Bandam Harshith Reddy - Full-Stack Developer specializing in React.js, Next.js, Node.js with expertise in building scalable, user-centric web apps.",
+    "Results-driven full-stack developer skilled in React.js, Next.js, Node.js, Express.js, MongoDB, Stripe, and Razorpay. Proven ability to build scalable web applications with secure payment integrations, seamless booking platforms, and responsive, user-focused interfaces.",
   creator: "Harshith Reddy",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+  },
   openGraph: {
-    title: "Harshith Reddy",
+    title: "Bandam Harshith Reddy",
     description:
-      "Bandam Harshith Reddy - Full-Stack Developer specializing in React.js, Next.js, Node.js with expertise in building scalable, user-centric web apps.",
+      "Full-Stack Developer specializing in React.js, Next.js, Node.js, and MongoDB. Discover my work, projects, and how to get in touch.",
     url: "https://harshithbandam.vercel.app/",
     siteName: "Harshith Reddy",
     images: [
@@ -41,8 +47,11 @@ export const metadata: Metadata = {
   },
   keywords: [
     "Harshith Reddy",
+    "Bandam Harshith Reddy",
+    "Bandam",
     "Portfolio",
     "Frontend",
+    "Developer",
     "MERN",
     "Full Stack",
     "Harshith Portfolio",
@@ -52,6 +61,11 @@ export const metadata: Metadata = {
     "Next.js",
     "Developer",
     "Freelance",
+    "full-stack web developer in Hyderabad",
+    "React.js developer India",
+    "Next.js and MongoDB projects",
+    "purecode",
+    "purecode.ai",
   ],
 };
 
@@ -75,11 +89,13 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${geistMono.className} ${geistSans.className} text-white antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${geistMono.className} ${geistSans.className} relative text-white antialiased`}
       >
+        <div className="fixed bottom-0 size-32 bg-white/10 blur-[60px]"></div>
         <Analytics />
         <SpeedInsights />
         <DPRwrapper />
+        <Fader />
         <Header />
         {children}
         <Footer />

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import ContactMe from "../Contact/ContactMe";
+import ContactMe from "../../Contact/ContactMe";
 
 export default function DeveloperProfile() {
   return (
@@ -9,7 +9,7 @@ export default function DeveloperProfile() {
         <div className="before:absolute before:top-1/2 before:right-[-4px] before:h-3/2 before:w-[1px] before:-translate-1/2 before:bg-[radial-gradient(circle,_#ffffff,_transparent)] before:blur-[0px] before:content-[''] after:absolute after:top-1/2 after:left-[-2px] after:h-3/2 after:w-[1px] after:-translate-1/2 after:bg-[radial-gradient(circle,_#ffffff,_transparent)] after:blur-[0px] after:content-['']"></div>
         <Image
           priority
-          className="size-full object-cover object-[37%_50%]"
+          className="size-full object-cover object-[37%_50%] perspective-midrange transform-3d"
           src={"/img.png"}
           width={600}
           height={600}

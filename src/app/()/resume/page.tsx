@@ -4,6 +4,10 @@ import useTriggerAction from "triggerAction";
 import { Download } from "lucide-react";
 import React from "react";
 
+export const metadata = {
+  title: "Resume - Bandam Harshith Reddy",
+};
+
 export default function Page() {
   const { handleClickAction: handleClick } = useTriggerAction();
 

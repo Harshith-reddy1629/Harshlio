@@ -15,6 +15,7 @@ export default function Header() {
   const timeref = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
   const { handleClickAction: handleClick } = useTriggerAction();
+  const ref = useRef<HTMLAnchorElement[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,8 +67,8 @@ export default function Header() {
               : ""
           }`}
         >
-          {HeaderRoutes.map((route) => (
-            <LinkButton key={route.name} href={route.href}>
+          {HeaderRoutes.map((route, i) => (
+            <LinkButton ref={ref} i={i} key={route.name} href={route.href}>
               <span className="text-primary">{route.name.slice(0, 1)}</span>
               {route.name.slice(1)}
             </LinkButton>
@@ -75,7 +76,7 @@ export default function Header() {
         </div>
       </header>
       {pathname.startsWith("/resume") ? (
-        <ShinyBorder className="!fixed !right-6 !bottom-4 z-60 flex cursor-pointer items-center gap-1 rounded-md bg-[#000] shadow-2xl shadow-white/10 transition-all duration-300 hover:bg-[#1118]">
+        <ShinyBorder className="!fixed !right-6 !bottom-6 z-60 flex cursor-pointer items-center gap-1 rounded-md bg-[#000] shadow-2xl shadow-white/10 transition-all duration-300 hover:bg-[#1118]">
           <a
             href="/harshith_reddy_06.pdf"
             className="z-50 flex items-center gap-2 rounded-lg bg-[#000] p-3 px-5 text-xs shadow-xl transition-all duration-300 hover:bg-[#0f0f0f]"
@@ -91,7 +92,7 @@ export default function Header() {
         </ShinyBorder>
       ) : (
         <Link onClick={() => handleClick("Resume")} href="/resume">
-          <ShinyBorder className="!fixed !right-6 !bottom-4 z-60 flex cursor-pointer items-center gap-1 rounded-md bg-[#000] p-2 px-6 shadow-2xl shadow-white/10 transition-all duration-300 hover:bg-[#1118]">
+          <ShinyBorder className="!fixed !right-6 !bottom-6 z-60 flex cursor-pointer items-center gap-1 rounded-md bg-[#000] p-2 px-6 shadow-2xl shadow-white/10 transition-all duration-300 hover:bg-[#1118]">
             <>
               <Document
                 className={`transform-all size-6 rounded fill-white duration-300`}

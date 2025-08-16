@@ -20,17 +20,58 @@ export const WORK_EXPERIENCE = [
       "React-Query",
       "Zustand",
     ],
+    about:
+      "PureCode.ai is an AI-driven developer platform focused on accelerating enterprise software development. It helps teams modernize legacy code, automate coding tasks, and maintain high standards of security and scalability to deliver efficient, reliable web applications.",
     description:
       "At PureCode, I spearheaded the integration of Stripe for seamless, secure payment processing and MailerLite for dynamic email automation, driving higher user engagement. Optimized the platform’s UI/UX, ensuring responsiveness and performance across all devices. Successfully resolved over 200 bugs, significantly improving application stability and overall user experience.",
+    my_experience: {
+      desc: "At PureCode, I contributed as a full-stack developer focused on building robust, scalable web applications using React.js, Next.js, Node.js, and MongoDB. My role spanned:",
+      points: {
+        "Payment Integration":
+          "Implemented seamless and secure Stripe payment gateways, improving transaction reliability and user trust.",
+        "Email Automation":
+          "Integrated MailerLite for automated campaigns and transactional messaging, enhancing user engagement.",
+        "Feature Delivery & Stability":
+          "Fixed over 100 bugs, optimized UI/UX in collaboration with designers, and elevated platform responsiveness and accessibility across devices.",
+        "Backend & Security":
+          "Participated in backend API design, prioritizing security and high performance, and ensured smooth coordination between frontend and backend teams.",
+        "Continuous Improvement":
+          "Focused on applying best development practices for scalability, maintainability, and future growth of PureCode’s platforms.",
+      },
+    },
   },
   {
     name: "Kyno Health",
     role: "Freelance",
     date: "",
     icon: Kyno,
-    skillsOverview: ["React.js", "Razorpay" ,"Google Maps API", "Bootstrap",  "CSS",    ],
+    skillsOverview: [
+      "React.js",
+      "Razorpay",
+      "Google Maps API",
+      "Bootstrap",
+      "CSS",
+    ],
+    about:
+      "Kyno Health is an innovative healthcare startup committed to simplifying access to medical professionals by leveraging technology for online appointment scheduling, payment integration, and real-time location services.",
     description:
       "At Kyno Health, developed an intuitive doctor booking system, integrating Razorpay for smooth and secure payment processing. Incorporated Google Maps API to display real-time locations and availability, enhancing user convenience. Designed a responsive, user-friendly interface to ensure seamless accessibility across all devices and platforms.",
+
+    my_experience: {
+      desc: "During my freelance engagement with Kyno Health, I applied my expertise to develop a user-friendly, efficient, and scalable doctor booking system designed to enhance accessibility and streamline the appointment scheduling process.",
+      points: {
+        "Booking System Development":
+          "Designed and built an easy-to-use appointment scheduling platform for patients and doctors, focusing on smooth UX with React.js and Material UI.",
+
+        "Secure Payment Processing":
+          "Integrated Razorpay to enable reliable and secure payments during bookings.",
+
+        "Google Maps API":
+          "Utilized the Google Maps API to display real-time locations and availability of doctors, enhancing user convenience and accessibility.",
+        "Cross-Device Accessibility":
+          "Developed a fully responsive interface, ensuring seamless functionality and accessibility on all devices.",
+      },
+    },
   },
 ];
 

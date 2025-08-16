@@ -1,42 +1,8 @@
-"use client";
-import React, { useEffect } from "react";
+import React from "react";
 import ShinyBorder from "@/components/custom/ShinyBorder";
 import { WORK_EXPERIENCE } from "@/constants/work";
 
-export default function MyWorks() {
-  useEffect(() => {
-    const intersector = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("translate-y-0");
-            entry.target.classList.remove("opacity-0", "translate-y-[60px]");
-            observer.unobserve(entry.target);
-          } else {
-            entry.target.classList.add(
-              "opacity-0",
-              "translate-y-[60px]",
-              "transition-all",
-              "duration-500",
-            );
-          }
-        });
-      },
-      {
-        threshold: 0.25,
-      },
-    );
-
-    const elements = document.querySelectorAll("[data-scroll-effect=true]");
-    elements.forEach((element) => {
-      intersector.observe(element);
-    });
-
-    return () => {
-      intersector.disconnect();
-    };
-  }, []);
-
+export default function WorkPage() {
   return (
     <div className="mx-auto w-full px-4 py-12 md:max-w-[1200px] md:px-8">
       <div className="mb-12">
@@ -44,7 +10,7 @@ export default function MyWorks() {
           {" "}
           <span
             data-scroll-effect
-            className="bg-[radial-gradient(#fff9,#fff6)] bg-clip-text text-transparent"
+            className="bg-[radial-gradient(#fff9,#fff8)] bg-clip-text text-transparent"
           >
             Work
           </span>{" "}
@@ -57,7 +23,9 @@ export default function MyWorks() {
             Experience
           </span>
         </h2>
-        <p></p>
+        <p data-scroll-effect className="mt-6 text-white/60">
+          Engineering scalable, high-impact solutions with modern technologies.
+        </p>
       </div>
       <div>
         {WORK_EXPERIENCE.map((each) => (
@@ -67,9 +35,9 @@ export default function MyWorks() {
             className="mb-6 rounded-xl border border-white/10 bg-[#ffffff08] p-6 transition-all duration-500 ease-in-out before:opacity-40 after:opacity-40"
           >
             <div className="flex flex-wrap items-center gap-1">
-              <each.icon className="mr-3 size-13 shrink-0 rounded-lg border border-white/10 bg-white/5 p-1.5" />
+              <each.icon className="mr-3 size-14 shrink-0 rounded-lg border border-white/10 bg-white/5 p-1.5" />
               <div>
-                <h3 className="text-2xl">{each.name}</h3>
+                <h3 className="text-3xl">{each.name}</h3>
                 <p className="text-sm text-white/50">{each.role}</p>
               </div>
               {each.date && (
@@ -88,16 +56,27 @@ export default function MyWorks() {
                     {skill}
                   </span>
                 ))}
-                {/* <span className="!bg-transparent !px-1 text-white">
-                  + more
-                </span>{" "} */}
               </p>
             </div>
-            {each?.description && (
-              <div className="mt-6 rounded-xl bg-black py-5 px-4">
-                <p className="text-[clamp(12px,1.5vw,14px)]">{each.description}</p>
-              </div>
-            )}
+            <div className="pt-4">
+              <h4 className="text-xl max-md:text-base text-white/80">About {each.name}:</h4>
+              <p className="mt-1 max-md:text-sm text-white/60">{each.about}</p>
+            </div>
+            <div className="mt-6 rounded-xl bg-black px-4 py-4">
+              <p className="text-[17px] max-md:text-sm text-white/90">
+                {each.my_experience.desc}
+              </p>
+              <ul className="mt-2 list-outside list-disc max-md:text-sm max-md:pl-4.5 pl-6 text-white/60 *:mb-1">
+                {Object.entries(each.my_experience.points).map(
+                  ([key, value], ind) => (
+                    <li key={`keys-${ind}`}>
+                      <span className="font-bold text-white/80">{key}</span>:{" "}
+                      {value}
+                    </li>
+                  ),
+                )}
+              </ul>
+            </div>
           </ShinyBorder>
         ))}
       </div>

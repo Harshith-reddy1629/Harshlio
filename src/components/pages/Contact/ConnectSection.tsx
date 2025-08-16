@@ -57,7 +57,7 @@ export default function ConnectSection() {
         </a>{" "}
       </div>
       <div className="mt-8 flex flex-col justify-between gap-5 md:flex-row">
-        <ShinyBorder className="w-full rounded-xl p-5 after:!h-[0.5px]">
+        <ShinyBorder scrollEffect className="w-full rounded-xl p-5 after:!h-[0.5px]">
           <>
             <p className="mb-3 text-xl">Please fill the form to get in touch</p>
             <ContactForm className="rounded-lg border-white/20 *:gap-5" />
