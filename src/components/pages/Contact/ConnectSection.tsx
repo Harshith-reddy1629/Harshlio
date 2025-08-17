@@ -21,7 +21,7 @@ export default function ConnectSection() {
         </h2>
         <p></p>
       </div>
-      <div className="grid grid-cols-[repeat(auto-fill,_minmax(260px,_1fr))] gap-4 *:flex-[1_1_33%] *:cursor-pointer">
+      <div className="grid grid-cols-[repeat(auto-fit,_minmax(260px,_1fr))] gap-4 *:flex-[1_1_33%] *:cursor-pointer">
         <div
           data-scroll-effect
           onClick={() => handleClick("CALL {contact form}")}

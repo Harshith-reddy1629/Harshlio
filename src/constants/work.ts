@@ -1,5 +1,6 @@
 import Kyno from "@/icons/Companies/Kyno";
 import PC from "@/icons/Companies/PC";
+import Popng from "@/icons/Companies/Popng";
 
 export const WORK_EXPERIENCE = [
   {
@@ -70,6 +71,43 @@ export const WORK_EXPERIENCE = [
           "Utilized the Google Maps API to display real-time locations and availability of doctors, enhancing user convenience and accessibility.",
         "Cross-Device Accessibility":
           "Developed a fully responsive interface, ensuring seamless functionality and accessibility on all devices.",
+      },
+    },
+  },
+  {
+    name: "PopnGulpp",
+    role: "Freelance (Full-stack)",
+    date: "",
+    link: "https://popngulpp.com",
+    icon: Popng,
+    skillsOverview: [
+      "Next.js",
+      "Typescript",
+      "React Query",
+      "TailwindCSS",
+      "Shadcn UI",
+      "Supabase",
+      "EmailJS",
+      "Google Docs API",
+      "Vercel",
+    ],
+    about:
+      "PopnGulpp is a vibrant soda brand platform designed to showcase the company’s identity, product flavors, and unique offerings. It also provides a structured way for potential distributors and dealers to connect with the brand through intuitive forms and automated workflows.",
+    description:
+      "I built PopnGulpp’s official brand showcase website from scratch, enabling the company to present its soda flavors, types, and brand story in a visually engaging, responsive platform. The application features integrated forms for distributor and dealer inquiries, automated email notifications, and secure data storage in Google Docs, ensuring smooth business operations alongside a clean, consumer-friendly design.",
+    my_experience: {
+      desc: "In this freelance engagement, I was responsible for building a polished brand showcase site that highlights PopnGulpp’s products while also serving as a business growth tool for dealer and distributor acquisition.",
+      points: {
+        "Architecture & Development":
+          "Built the platform end-to-end using Next.js, ensuring performance, maintainability, and SEO optimization.",
+        "Database & Authentication":
+          "Utilized Supabase for real-time database operations and secure authentication.",
+        "Form Handling & Automation":
+          "Integrated EmailJS for instant email notifications and Google Docs API to save and organize form responses efficiently.",
+        "State Management":
+          "Implemented React Query for optimized server-state handling, improving app responsiveness and reducing unnecessary network calls.",
+        "UI/UX & Deployment":
+          "Designed with TailwindCSS for a sleek, modern look and deployed the platform on Vercel for reliability and scalability.",
       },
     },
   },

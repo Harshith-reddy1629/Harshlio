@@ -19,6 +19,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (window.innerWidth < 760) return;
       if (timeref.current) {
         clearTimeout(timeref.current);
       }
