@@ -1,4 +1,5 @@
 import ShinyBorder from "@/components/custom/ShinyBorder";
+import { EllipsisVertical } from "lucide-react";
 import React from "react";
 
 export default function About() {
@@ -15,8 +16,22 @@ export default function About() {
       </h2>{" "} */}
       <ShinyBorder
         scrollEffect
-        className="rounded-lg bg-[#ffffff08] p-8 text-lg text-white/65 max-md:p-4 max-md:text-[14px]"
+        className="rounded-3xl bg-[#ffffff08] pt-0 shadow-2xl shadow-white/10 "
       >
+        <div className="flex border-white/20 px-8 max-sm:px-5 py-2">
+          <div className="flex flex-[1_1_33%] items-center">
+            <span className="mr-2 size-3 rounded-full bg-red-600/80"></span>
+            <span className="mr-2 size-3 rounded-full bg-yellow-400"></span>
+            <span className="mr-2 size-3 rounded-full bg-green-600"></span>
+          </div>
+          <div className="flex flex-[1_1_33%] items-center justify-center rounded-full p-1 px-2">
+            {/* <Info className="size-4 text-white/60 mr-2" /> */}
+            <p className="text-center text-white/60">About</p>
+          </div>
+          <div className="flex flex-[1_1_33%] items-center justify-end">
+            <EllipsisVertical className="size-4.5 text-white/50" />
+          </div>
+        </div>
         {/* <div className="mb-6 flex items-center justify-center gap-8">
           <div className="relative h-[1px] w-[180px] bg-gradient-to-r from-transparent from-15% to-white/80 after:absolute after:top-1/2 after:left-full after:size-2 after:-translate-y-1/2 after:rotate-45 after:rounded-full after:bg-white/80 after:content-['']"></div>
           <h2 className="rounded-full bg-background border border-white/20 px-8 py-1.5 text-white/70">
@@ -37,15 +52,18 @@ export default function About() {
         collaboration, I thrive on solving tough problems and refining user
         experiences. Every project is a fresh opportunity to make technology
         work beautifully, for everyone. */}
-        As a developer, I view web development as both a craft and a
-        challenge—where ideas are transformed into seamless, reliable
-        applications that empower users and clients. My work is defined by
-        precision, thoughtful design, and robust engineering across both
-        frontend and backend systems, including smart integrations with leading
-        third-party services. Guided by curiosity and a commitment to continuous
-        improvement, I collaborate with purpose and embrace complexity as an
-        opportunity for growth and innovation. Every project is a chance to
-        create technology that works beautifully and makes a positive impact.
+        <h2 className="p-8 text-lg text-white/65 max-md:p-4 max-md:text-[14px]">
+          As a developer, I view web development as both a craft and a
+          challenge—where ideas are transformed into seamless, reliable
+          applications that empower users and clients. My work is defined by
+          precision, thoughtful design, and robust engineering across both
+          frontend and backend systems, including smart integrations with
+          leading third-party services. Guided by curiosity and a commitment to
+          continuous improvement, I collaborate with purpose and embrace
+          complexity as an opportunity for growth and innovation. Every project
+          is a chance to create technology that works beautifully and makes a
+          positive impact.
+        </h2>
       </ShinyBorder>
     </div>
   );
