@@ -34,7 +34,7 @@ export default function ContactDialog({
           <DialogTitle className="text-xl">Connect with Me</DialogTitle>
           <DialogDescription className="p-0"></DialogDescription>
         </DialogHeader>
-        <ContactForm />
+        <ContactForm fadeEffect={false} />
       </DialogContent>
     </Dialog>
   );

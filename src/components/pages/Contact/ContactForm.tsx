@@ -19,8 +19,10 @@ const INITIAL_FORM: FormData = {
 
 export default function ContactForm({
   className = "",
+  fadeEffect = true,
 }: {
   className?: string;
+  fadeEffect?: boolean;
 }) {
   const [form, setForm] = useState<FormData>(INITIAL_FORM);
   const [errors, setErrors] = useState<Partial<FormData>>({});
@@ -79,7 +81,7 @@ export default function ContactForm({
   };
 
   return (
-    <div className={className} data-scroll-effect>
+    <div className={className} data-scroll-effect={fadeEffect}>
       <form
         onFocus={(e) => {
           handleClick(`${e.target.name} focused ${e.isTrusted} {contact form}`);

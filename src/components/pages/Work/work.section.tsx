@@ -1,8 +1,8 @@
 import React from "react";
 import ShinyBorder from "@/components/custom/ShinyBorder";
 import { WORK_EXPERIENCE } from "@/constants/work";
-import Link from "next/link";
-import { MoveRight } from "lucide-react";
+import ExploreButton from "./work.explore.button";
+import BrowseButton from "./work.browse.button";
 
 export default function MyWorks() {
   return (
@@ -73,26 +73,11 @@ export default function MyWorks() {
                 </p>
               </div>
             )}
-            <Link
-              href={"/work"}
-              className="group mt-4 inline-flex items-center gap-1.5 self-start rounded-md bg-white/10 p-2 px-6 text-sm transition-all duration-300 hover:bg-white/5"
-            >
-              {" "}
-              {/* View more about {each.name} */}
-              Explore Full Project Details
-              <MoveRight className="size-4 transition-all duration-300 group-hover:translate-x-1" />
-            </Link>
+            <ExploreButton />
           </ShinyBorder>
         ))}
       </div>
-      <Link
-        href={"/work"}
-        className="group mx-auto mt-4 inline-flex items-center gap-1.5 rounded-md bg-white/10 p-2 px-6 text-sm transition-all duration-300 hover:bg-white/5"
-      >
-        {" "}
-        Browse All My Work
-        <MoveRight className="size-4 transition-all duration-300 group-hover:translate-x-1" />
-      </Link>
+      <BrowseButton />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import OpenWorkBadge from "@/components/custom/OpenWorkBadge";
+// import ShortBorders from "@/components/custom/ShortBorders";
 
 export default function NameHeader() {
   return (
@@ -8,10 +9,17 @@ export default function NameHeader() {
       <span className="block text-[clamp(1rem,2.2vw,1.4rem)] font-light text-white/70">
         Hey!, I&apos;m
       </span>
-      Bandam <span className="">Harshith Reddy</span>
+      Bandam{" "}
+      <span
+      // data-scroll-effect
+      // className="inline-block data-[scroll-effect=true]:!translate-y-0 data-[scroll-effect=true]:!opacity-100 data-[scroll-effect=true]:blur-xs"
+      >
+        Harshith Reddy
+      </span>
       <span className="absolute top-0 left-1/2 h-1/2 w-1/2 overflow-hidden">
         {/* <span className="absolute left-1/2 h-1/9 w-2/3 -translate-1/2 rounded-[100%] bg-foreground/90 blur-xl"></span> */}
       </span>
+      {/* <ShortBorders borderwidth="2px" /> */}
     </h1>
   );
 }
